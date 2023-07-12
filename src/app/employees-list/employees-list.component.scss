@@ -1,0 +1,133 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height:100%;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+  background-color: floralwhite;
+}
+
+td,
+th {
+  width: fit-content;
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    max-width: 95vw;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  table {
+    width: 95%;
+  }
+
+  .mat-header-row,
+  mat-paginator {
+    display: none;
+  }
+
+  .mat-table {
+    border: 0;
+    vertical-align: middle;
+  }
+
+  .mat-table caption {
+    font-size: 1em;
+  }
+
+  .mat-table .mat-row {
+    margin-bottom: 40vh;
+    display: block;
+    // width:80%;
+  }
+
+  .mat-table .mat-cell {
+    display: block;
+    font-size: 1.5em;
+    text-align: right;
+    height: 30px;
+    margin: 4% auto;
+    width: 100%;
+  }
+
+  td.mat-cell:first-of-type {
+    padding-left: 0;
+  }
+//think to rename all the column in case of changes
+  td:nth-of-type(1):before {
+    content: "Prénom";
+    float: left;
+    margin-left: 10px;
+    font-weight: normal;
+    text-decoration: underline;
+    font-size: .85em;
+  }
+
+  td:nth-of-type(2):before {
+    content: "Nom";
+    float: left;
+    margin-left: 10px;
+    font-weight: normal;
+    text-decoration: underline;
+    font-size: .85em;
+  }
+
+  td:nth-of-type(3):before {
+    content: "Email";
+    float: left;
+    margin-left: 10px;
+    font-weight: normal;
+    text-decoration: underline;
+    font-size: .85em;
+  }
+
+  td:nth-of-type(4):before {
+    content: "Rôle";
+    float: left;
+    margin-left: 10px;
+    font-weight: normal;
+    text-decoration: underline;
+    font-size: .85em;
+  }
+
+  td:nth-of-type(5):before {
+    content: "Date d'embauche";
+    float: left;
+    margin-left: 10px;
+    font-weight: normal;
+    text-decoration: underline;
+    font-size: .85em;
+  }
+
+  td:nth-of-type(6):before {
+    content: "Modifier les données";
+    float: left;
+    margin-left: 10px;
+    font-weight: normal;
+    text-decoration: underline;
+    font-size: .85em;
+  }
+
+  td:nth-of-type(7):before {
+    content: "Supprimer les données";
+    float: left;
+    margin-left: 10px;
+    font-weight: normal;
+    text-decoration: underline;
+    font-size: .85em;
+  }
+}

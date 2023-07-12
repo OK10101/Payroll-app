@@ -1,0 +1,107 @@
+<!--Formulaire d'enregistrement des employés.es-->
+<h2 mat-dialog-title>Ajouter un.e employé.e</h2>
+<div mat-dialog-content>
+ <form [formGroup]="employeeForm">
+  <mat-form-field class="" appearance="outline">
+    <mat-label>Prénom</mat-label>
+    <input matInput #firstname maxlength="25" placeholder="Jean" formControlName="firstname"/>
+    <mat-hint align="start">
+      <strong>prénom</strong>
+    </mat-hint>
+    <mat-hint align="end">{{ firstname.value.length }} / 25</mat-hint>
+  </mat-form-field>
+  <mat-form-field class="" appearance="outline">
+    <mat-label>Nom</mat-label>
+    <input matInput #name maxlength="25" placeholder="Martin" formControlName="name"/>
+    <mat-hint align="start">
+      <strong>nom</strong>
+    </mat-hint>
+    <mat-hint align="end">{{ name.value.length }} / 25</mat-hint>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Email</mat-label>
+    <input
+      type="email"
+      matInput
+      formControlName="email"
+      placeholder="Ex. jean@martin.fr"
+    />
+    <mat-error
+      *ngIf="
+        emailFormControl.hasError('email') &&
+        !emailFormControl.hasError('required')">
+      Entrer un email valide
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Un email est <strong>nécessaire</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Rôle</mat-label>
+    <mat-select #role placeholder="commerciale" formControlName="role">
+      <mat-option value="salesman">Commerciale</mat-option>
+      <mat-option value="Assistant">Assistant.e</mat-option>
+      <mat-option value="employee">Employé.é</mat-option>
+      <mat-option value="worker">Ouvrier.ère</mat-option>
+      <mat-option value="technician">Technicien.ne</mat-option>
+      <mat-option value="foreman">chef.fe d'équipe</mat-option>
+      <mat-option value="engineer">Ingénieur.e</mat-option>
+      <mat-option value="manager">Directeur.trice</mat-option>
+      <mat-option value="ce">Directeur.trice Exécutif</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Service</mat-label>
+    <mat-select #department placeholder="Sales" formControlName="department">
+      <mat-option value="comptability">Comptabilité</mat-option>
+      <mat-option value="executivecommittee">Direction Générale</mat-option>
+      <mat-option value="talent">Talent Acquisition</mat-option>
+      <mat-option value="sales">Commerciale</mat-option>
+      <mat-option value="customer_support">Assistance client</mat-option>
+      <mat-option value="si">Système d'information</mat-option>
+      <mat-option value="logistic">Logistique</mat-option>
+      <mat-option value="factory_1">Usine 1</mat-option>
+      <mat-option value="factory_2">Usine 2</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+  <mat-label> Rémunération brute annuelle</mat-label>
+  <input
+  matInput
+  #wage type="number"
+  name="wage"
+  class="example-right-align"
+  placeholder="Rémunération brute"
+  formControlName="wage">
+  <span matPrefix>€&nbsp;</span>
+  <span matSuffix><sup class="suffix">.00</sup></span>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+  <mat-label> Objectif de vente brute annuelle</mat-label>
+  <input
+  matInput
+ type="number"
+  name="sales_objective"
+  class="example-right-align"
+  placeholder="Rémunération brute"
+  formControlName="sales_objective">
+  <span matPrefix>€&nbsp;</span>
+  <span matSuffix><sup class="suffix">.00</sup></span>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Date d'embauche</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="hired_at"/>
+    <mat-datepicker-toggle matsuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker touchui #picker></mat-datepicker>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+ </form>
+</div>
+<div mat-dialog-action align="end" >
+<button mat-raised-button mat-dialog-close color="warn">Fermer</button>
+<button mat-raised-button color="primary" class="ms-5" (click)="addEmployee()"> {{ actionButton }} </button>
+</div>

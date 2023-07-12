@@ -1,0 +1,25 @@
+{
+  "employees": [
+    {
+      "firstname": "Jean",
+      "name": "Martin",
+      "email": "jean@martin.fr",
+      "role": "employee",
+      "department": "talent",
+      "wage": 35000,
+      "sales_objective": 10000,
+      "hired_at": "2022-03-22T23:00:00.000Z",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
